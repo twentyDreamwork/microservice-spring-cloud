@@ -1,0 +1,4 @@
+com\cloud\consumer\user\controller\ApiUserController.class
+com\cloud\consumer\user\util\ApiConfig.class
+com\cloud\consumer\user\entity\User.class
+com\cloud\consumer\user\ConsumerUserApplication.class

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.cloud</groupId>
+	<artifactId>microservice-spring-could</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<modules>
+		<module>microservice-consumer-user</module>
+		<module>microservice-provider-user</module>
+		<module>microservice-cloud-eureka</module>
+	</modules>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+	</properties>
+	
+	
+	
+	<dependencyManagement>
+	
+	    <dependencies>
+	     <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-parent</artifactId>
+                <version>Dalston.SR5</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+            <groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-starter-parent</artifactId>
+					<version>1.5.17.RELEASE</version>
+            		<type>pom</type>
+            		<scope>import</scope>
+            </dependency>
+		      <dependency>
+		        <groupId>com.could</groupId>
+		        <artifactId>microservice-consumer-user</artifactId>
+		        <version>${project.version}</version>
+		      </dependency>
+		      <dependency>
+		        <groupId>com.could</groupId>
+		        <artifactId>microservice-provider-user</artifactId>
+		        <version>${project.version}</version>
+		      </dependency>
+		      <dependency>
+		        <groupId>com.could</groupId>
+		        <artifactId>microservice-could-eureka</artifactId>
+		        <version>${project.version}</version>
+		      </dependency>
+	    </dependencies>
+  </dependencyManagement>
+  
+  
+  
+	<dependencies>
+	<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+	</dependencies>
+	<!--指定使用maven打包-->
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+          <configuration>
+            <source>${java.version}</source>
+            <target>${java.version}</target>
+            </configuration>
+      </plugin>
+ 
+      <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-surefire-plugin</artifactId>
+            <configuration>
+              <skipTests>true</skipTests>    <!--默认关掉单元测试 -->
+            </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
