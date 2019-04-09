@@ -1,3 +1,7 @@
 server:
   port: 9090
+  context-path: "/microservice-consumer-user"
+spring:
+  application:
+    name: /microservice-consumer-user
 spring.devtools.restart.enabled: true
