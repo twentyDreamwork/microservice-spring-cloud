@@ -26,12 +26,46 @@
             <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
 	</dependencies>
-<build>
+<!--  <build>
   <plugins>
     <plugin>
         <groupId>org.springframework.boot</groupId>
        <artifactId>spring-boot-maven-plugin</artifactId>
     </plugin>
   </plugins>
- </build>
+ </build>  -->
+<!--    <build>
+   <plugins>
+	  <plugin>
+	      <groupId>org.apache.maven.plugins</groupId>
+		  <artifactId>maven-jar-plugin</artifactId>
+		  <version>2.6<version>
+		  <configuration>
+		      <archive>
+		          <manifest>
+			          <mainClass>com.cloud.eureka.EurekaApplication</mainClass>
+			      </manifest>
+		      </archive>						
+		  </configuration>
+	  </plugin> 
+   </plugins>
+</build>-->
+
+  <build>
+        <plugins>
+            <!--解决SpringBoot打包成jar后运行提示没有主清单属性-->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+  </build>
+
 </project>

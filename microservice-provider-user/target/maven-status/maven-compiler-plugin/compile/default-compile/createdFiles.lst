@@ -1,5 +1,0 @@
-com\cloud\provider\user\api\UserService.class
-com\cloud\provider\user\controller\UserController.class
-com\cloud\provider\user\entity\User.class
-com\cloud\provider\user\mappers\UserMapper.class
-com\cloud\provider\user\ProviderUserApplication.class
